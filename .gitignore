@@ -109,3 +109,4 @@ venv.bak/
 *.ac3
 *.wav
 *.mp3
+.idea/
