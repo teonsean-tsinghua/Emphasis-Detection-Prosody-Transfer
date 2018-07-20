@@ -3,7 +3,6 @@ import pandas as pd
 import os
 import sys
 
-""" 你的 APPID AK SK """
 APP_ID = '11543212'
 API_KEY = 'jmmOKK8Gkzv6UMTa3nNR7wfv'
 SECRET_KEY = 'HCkGzPGEY1d32HZ50eApvnTkd6X53qqN'
