@@ -1,7 +1,6 @@
 from aip import AipSpeech
 import pandas as pd
 import os
-import sys
 
 APP_ID = '11543212'
 API_KEY = 'jmmOKK8Gkzv6UMTa3nNR7wfv'
@@ -21,8 +20,7 @@ def speech2text(language, gender):
     dir_path = 'audio/segment/%s/%s/' % (language, gender)
     filenames = os.listdir(dir_path)
     for i, filename in enumerate(filenames):
-        sys.stdout.write('%d/%d\r' % (i, len(filenames)))
-        sys.stdout.flush()
+        print('%d/%d' % (i, len(filenames)))
         re = client.asr(get_file_content(dir_path + filename), 'wav', 16000, {'dev_pid': 1536 if language == 'cn' else 1737})
         if re['err_no'] == 0:
             text = text.append({'Language': language, 'Gender': gender,
