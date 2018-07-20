@@ -10,5 +10,6 @@
 * inaSpeechSegmenter
 * pydub
 ### Steps
-1. 分别运行speech_segment.py中两段语句，在text/目录下会生成两个csv文件。该步骤耗时较长，因此csv文件将上传至repo中。
+1. （optional）分别运行speech_segment.py中两段语句，在text/目录下会生成两个csv文件。该步骤耗时较长，因此csv文件将上传至repo中。
 2. 运行apply_segment.py,将cn.wav和en.wav两个原始音轨中的男声片段与女声片段切分出来，分别存储在audio/segment/cn(en)/male(female)目录下。
+3. （optional）运行speech2text.py，调用百度的语音识别api，将切分后的语音转录为文字，以csv格式存放在text文件夹下。四个csv文件同样上传至repo中。
