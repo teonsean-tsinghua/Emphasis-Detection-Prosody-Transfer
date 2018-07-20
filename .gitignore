@@ -110,3 +110,4 @@ venv.bak/
 *.wav
 *.mp3
 .idea/
+SPPAS/
