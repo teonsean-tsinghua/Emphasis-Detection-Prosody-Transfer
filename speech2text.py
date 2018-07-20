@@ -18,6 +18,7 @@ def speech2text(language, gender):
     text = pd.DataFrame(columns=('Language', 'Gender', 'Filename', 'Text'))
     dir_path = 'audio/segment/%s/%s/' % (language, gender)
     filenames = os.listdir(dir_path)
+    filenames.sort(key=lambda name: int(name[:-4]))
     for i, filename in enumerate(filenames):
         print('%d/%d' % (i, len(filenames)))
         re = client.asr(get_file_content(dir_path + filename), 'wav', 16000, {'dev_pid': 1536 if language == 'cn' else 1737})
