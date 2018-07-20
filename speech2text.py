@@ -7,7 +7,6 @@ API_KEY = 'jmmOKK8Gkzv6UMTa3nNR7wfv'
 SECRET_KEY = 'HCkGzPGEY1d32HZ50eApvnTkd6X53qqN'
 
 client = AipSpeech(APP_ID, API_KEY, SECRET_KEY)
-text = pd.DataFrame(columns=('Language', 'Gender', 'Filename', 'Text'))
 
 
 def get_file_content(filePath):
@@ -16,7 +15,7 @@ def get_file_content(filePath):
 
 
 def speech2text(language, gender):
-    global text
+    text = pd.DataFrame(columns=('Language', 'Gender', 'Filename', 'Text'))
     dir_path = 'audio/segment/%s/%s/' % (language, gender)
     filenames = os.listdir(dir_path)
     for i, filename in enumerate(filenames):
@@ -27,13 +26,9 @@ def speech2text(language, gender):
                                 'Filename': filename, 'Text': re['result']}, ignore_index=True)
         else:
             print(re)
+    text.to_csv('text/recognized_%s_%s.csv' % (language, gender), index=False)
 
-try:
-    speech2text('cn', 'male')
-    speech2text('cn', 'female')
-    speech2text('en', 'male')
-    speech2text('en', 'female')
-except BaseException as e:
-    print(e)
-finally:
-    text.to_csv('text/recognized_text.csv')
+speech2text('cn', 'male')
+speech2text('cn', 'female')
+speech2text('en', 'male')
+speech2text('en', 'female')
