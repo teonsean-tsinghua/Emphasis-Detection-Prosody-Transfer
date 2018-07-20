@@ -111,3 +111,4 @@ venv.bak/
 *.mp3
 .idea/
 SPPAS/
+tmp/
