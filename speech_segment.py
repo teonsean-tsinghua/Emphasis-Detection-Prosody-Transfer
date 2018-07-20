@@ -1,5 +1,9 @@
-from py_speech_seg import speech_segmentation as seg
-
-#seg_point = seg.multi_segmentation("audio/original/en.wav",16000,256,128,plot_seg=False,save_seg=True)
-seg_point = seg.multi_segmentation("audio/original/cn.wav",16000,256,128,plot_seg=False,save_seg=True)
-
+from inaSpeechSegmenter import Segmenter, seg2csv
+#media = 'audio/original/cn.wav'
+#seg = Segmenter()
+#segmentation = seg(media)
+#seg2csv(segmentation, 'text/cn.csv')
+media = 'audio/original/en.wav'
+seg = Segmenter()
+segmentation = seg(media)
+seg2csv(segmentation, 'text/en.csv')
