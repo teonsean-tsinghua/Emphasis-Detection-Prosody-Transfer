@@ -4,8 +4,18 @@ import os
 
 def apply_segment(audioname):
     try:
+        os.mkdir('audio/segment')
+    except FileExistsError:
+        pass
+    try:
         os.mkdir('audio/segment/%s' % audioname)
+    except FileExistsError:
+        pass
+    try:
         os.mkdir('audio/segment/%s/male' % audioname)
+    except FileExistsError:
+        pass
+    try:
         os.mkdir('audio/segment/%s/female' % audioname)
     except FileExistsError:
         pass
@@ -16,11 +26,13 @@ def apply_segment(audioname):
     male_cnt = 0
     female_cnt = 0
     for i, row in segments.iterrows():
+        if row[2] - row[1] <= 1000:
+            continue
         if row[0] == 'Male':
-            (audio[row[1]:row[2]]).export('audio/segment/%s/male/%d.wav' % (audioname, male_cnt), format='wav')
+            (audio[row[1]:row[2]] + 30).export('audio/segment/%s/male/%d.wav' % (audioname, male_cnt), format='wav')
             male_cnt += 1
         elif row[0] == 'Female':
-            (audio[row[1]:row[2]]).export('audio/segment/%s/female/%d.wav' % (audioname, female_cnt), format='wav')
+            (audio[row[1]:row[2]] + 30).export('audio/segment/%s/female/%d.wav' % (audioname, female_cnt), format='wav')
             female_cnt += 1
 
 
