@@ -40,7 +40,7 @@ def count(s):
     return total_syllables
 
 
-time_align = pd.read_csv('text/dataset_time_align.csv', header=0)
+time_align = pd.read_csv('csv/dataset_time_align.csv', header=0)
 feature_avg = pd.DataFrame(columns=('Language', 'Gender', 'Filename', 'Avg E', 'Avg F0', 'Avg MFCC', 'Avg duration'))
 feature = pd.DataFrame(columns=('Language', 'Gender', 'Filename', 'Text', 'Start', 'End',
                                 'Raw E', 'Norm E', 'Diff E', 'Z0 E','NormZ0 E',
@@ -147,6 +147,6 @@ for i, row in time_align.iterrows():
         d.update({'Diff MFCC': diff_mfcc[i], 'NormZ0 MFCC': normz0_mfcc[i]})
         feature = feature.append(pd.Series(d), ignore_index=True)
 print('\nSaving data to csv files...')
-feature_avg.to_csv('text/dataset_feature_avg.csv', index=False)
-feature.to_csv('text/dataset_feature.csv', index=False)
+feature_avg.to_csv('csv/dataset_feature_avg.csv', index=False)
+feature.to_csv('csv/dataset_feature.csv', index=False)
 print('Done')

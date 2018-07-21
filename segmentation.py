@@ -20,7 +20,7 @@ def apply_segment(audioname):
         os.mkdir('audio/segment/%s/female' % audioname)
     except FileExistsError:
         pass
-    segments = pd.DataFrame(pd.read_csv('text/%s_segment.csv' % audioname, header=None, sep='\t'))
+    segments = pd.DataFrame(pd.read_csv('csv/%s_segment.csv' % audioname, header=None, sep='\t'))
     segments[1] = (segments[1] * 1000).astype(dtype=int, copy=False)
     segments[2] = (segments[2] * 1000).astype(dtype=int, copy=False)
     audio = AudioSegment.from_wav('audio/original/%s.wav' % audioname)

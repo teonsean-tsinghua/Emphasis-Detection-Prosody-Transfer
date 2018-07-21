@@ -10,7 +10,7 @@ except FileExistsError:
     pass
 
 path = os.popen('pwd').readlines()[0].strip()
-meta = pd.read_csv('text/dataset_meta.csv', header=0)
+meta = pd.read_csv('csv/dataset_meta.csv', header=0)
 align = pd.DataFrame(columns=('Language', 'Gender', 'Filename', 'Active time', 'Alignment'))
 
 
@@ -98,7 +98,7 @@ for i, row in meta.iterrows():
                     '-o ./tmp/palign.xra')
     subprocess.call(' && '.join(commands), shell=True)
     translate('en', row['Gender'], row['EnFile'])
-align.to_csv('./text/dataset_time_align.csv', index=False)
+align.to_csv('./csv/dataset_time_align.csv', index=False)
 try:
     os.rmdir('./tmp/')
 except BaseException:

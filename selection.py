@@ -1,10 +1,10 @@
 import pandas as pd
 
 
-cm = pd.read_csv('text/recognized_cn_male.csv', header=0)
-cf = pd.read_csv('text/recognized_cn_female.csv', header=0)
-em = pd.read_csv('text/recognized_en_male.csv', header=0)
-ef = pd.read_csv('text/recognized_en_female.csv', header=0)
+cm = pd.read_csv('csv/recognized_cn_male.csv', header=0)
+cf = pd.read_csv('csv/recognized_cn_female.csv', header=0)
+em = pd.read_csv('csv/recognized_en_male.csv', header=0)
+ef = pd.read_csv('csv/recognized_en_female.csv', header=0)
 
 f = pd.DataFrame(columns=['Gender', 'CnText', 'EnText', 'CnFile', 'EnFile'])
 
@@ -35,4 +35,4 @@ add('female', 26, 33)
 add('female', 27, 34)
 add('female', 29, 38)
 add('female', 37, 50)
-f.to_csv('text/dataset_meta.csv', index=False)
+f.to_csv('csv/dataset_meta.csv', index=False)

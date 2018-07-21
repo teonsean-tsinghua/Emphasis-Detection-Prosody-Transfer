@@ -14,15 +14,15 @@
 ## Steps
 除特殊说明外，建议用python3运行脚本。
 ### Data Retrieval
-1. （*optional*）分别运行presegmentation.py中两段语句，在text/目录下会生成两个csv文件。该步骤耗时较长，因此csv文件将上传至repo中。
+1. （*optional*）运行presegmentation.py，在csv/目录下生成两个csv文件描述分段信息。该步骤耗时较长，因此csv文件将上传至repo中。
 2. 运行segmentation.py，将cn.wav和en.wav两个原始音轨中的男声片段与女声片段切分出来，分别存储在audio/segment/cn(en)/male(female)目录下。
-3. （*optional*）运行transcription.py，调用百度的语音识别api，将切分后的语音转录为文字，以csv格式存放在text文件夹下。四个csv文件同样上传至repo中。
-4. 挑选可用数据，利用selection.py脚本生成描述可用数据集的csv文件text/dataset_meta.csv。
+3. （*optional*）运行transcription.py，调用百度的语音识别api，将切分后的语音转录为文字，以csv格式存放在csv文件夹下。四个csv文件同样上传至repo中。
+4. 挑选可用数据，校正识别文本，编辑并运行selection.py脚本生成描述可用数据集的csv文件csv/dataset_meta.csv。
 ### Data Processing
-1. 运行parallelization.py，将dataset_meta.csv中描述的所有语音与文字进行时域上的对齐，生成text/dataset_time_align.csv。
+1. 运行parallelization.py，将dataset_meta.csv中描述的所有语音与文字进行时域上的对齐，生成csv/dataset_time_align.csv。
 **注意：该步骤中会通过python的os模块执行shell命令调用SPPAS的python脚本，SPPAS的运行环境为python2.7+。
 在os的函数调用中，默认使用`python`命令来执行python2.7。在不同的运行环境下，可能需要修改此处命令来完成python2的调用。**
-2. 运行extraction.py，计算dataset_time_align.csv所约定的语音-文字对齐关系下的韵律特征，在text目录下生成 dataset_feature.csv
+2. 运行extraction.py，计算dataset_time_align.csv所约定的语音-文字对齐关系下的韵律特征，在csv目录下生成 dataset_feature.csv
 和dataset_feature_avg.csv两个文件，前者存储每个句子单位（词/字）的特征，后者存储整个句子的平均特征。其中：  
     * duration表示每个音节所占用的平均时长
     * Raw 表示原始数据
