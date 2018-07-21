@@ -98,3 +98,7 @@ for i, row in meta.iterrows():
     subprocess.call(' && '.join(commands), shell=True)
     translate('en', row['Gender'], row['EnFile'])
 align.to_csv('./text/dataset_time_align.csv', index=False)
+try:
+    os.rmdir('./tmp/')
+except BaseException:
+    pass
