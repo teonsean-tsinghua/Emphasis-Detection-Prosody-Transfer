@@ -44,7 +44,8 @@ def translate(lang, gend, name):
 
 
 for i, row in meta.iterrows():
-    print('\n\n\n=================================================\nprocessing %d/%d examples.' % (i+1, len(meta)))
+    print('\n\n\n=================================================')
+    print('processing speech-text pair: %d/%d' % (i+1, len(meta)))
     commands = []
     commands.append('cd %s' % path)
     commands.append('echo %s | ' % row['CnText'] +

@@ -9,8 +9,8 @@ SECRET_KEY = 'HCkGzPGEY1d32HZ50eApvnTkd6X53qqN'
 client = AipSpeech(APP_ID, API_KEY, SECRET_KEY)
 
 
-def get_file_content(filePath):
-    with open(filePath, 'rb') as fp:
+def get_file_content(filepath):
+    with open(filepath, 'rb') as fp:
         return fp.read()
 
 
@@ -21,13 +21,15 @@ def speech2text(language, gender):
     filenames.sort(key=lambda name: int(name[:-4]))
     for i, filename in enumerate(filenames):
         print('%d/%d' % (i, len(filenames)))
-        re = client.asr(get_file_content(dir_path + filename), 'wav', 16000, {'dev_pid': 1536 if language == 'cn' else 1737})
+        re = client.asr(get_file_content(dir_path + filename), 'wav', 16000,
+                        {'dev_pid': 1536 if language == 'cn' else 1737})
         if re['err_no'] == 0:
             text = text.append({'Language': language, 'Gender': gender,
                                 'Filename': filename, 'Text': re['result']}, ignore_index=True)
         else:
             print(re)
     text.to_csv('text/recognized_%s_%s.csv' % (language, gender), index=False)
+
 
 speech2text('cn', 'male')
 speech2text('cn', 'female')

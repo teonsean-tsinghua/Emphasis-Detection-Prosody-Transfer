@@ -3,70 +3,41 @@ from speechFeatures import features_util as fu
 import numpy as np
 from sklearn import preprocessing
 import re
+import sys
 
 
 def count(s):
     total_syllables = 0
-
-    # qu to tq
     s = re.sub(r'qu', 'qw', s)
-
-    # replace endings
     s = re.sub(r'(es$)|(que$)|(gue$)', '', s)
-
     s = re.sub(r'^re', r'ren', s)
     s = re.sub(r'^gua', r'ga', s)
-    # 前面跟元音的le或lle是不算的
     s = re.sub(r'([aeiou])(l+e$)', r'\g<1>', s)
-    # print s
     (s, syllables) = re.subn(r'([bcdfghjklmnpqrstvwxyz])(l+e$)', r'\g<1>', s)
     total_syllables += syllables
-    # print str(s) + "  " + str(syllables)
-
     s = re.sub(r'([aeiou])(ed$)', r'\g<1>', s)
     (s, syllables) = re.subn(r'([bcdfghjklmnpqrstvwxyz])(ed$)', r'\g<1>', s)
     total_syllables += syllables
-
-    # 下面这些情况是算一个的
     endsp = re.compile(r'(ly$)|(ful$)|(ness$)|(ing$)|(est$)|(er$)|(ent$)|(ence$)')
     (s, syllables) = endsp.subn(r'', s)
-    # print str(s)+"  "+str(syllables)
     total_syllables += syllables
     (s, syllables) = endsp.subn(r'', s)
-    # print str(s) + "  " + str(syllables)
     total_syllables += syllables
-
     s = re.sub(r'(^y)([aeiou][aeiou]*)', r'\g<2>', s)
-    # print str(s) + "  " + str(syllables)
     s = re.sub(r'([aeiou])(y)', r'\g<1>t', s)
-    # (s, syllables) = re.subn(r'(^y)([bcdfghjklmnpqrstvwxyz])', r'\g<2>', s)
-    # total_syllables += syllables
-    # total_syllables += syllables
-    # print s
-
     s = re.sub(r'aa+', r'a', s)
     s = re.sub(r'ee+', r'e', s)
     s = re.sub(r'ii+', r'i', s)
     s = re.sub(r'oo+', r'o', s)
     s = re.sub(r'uu+', r'u', s)
-
-    # Dipthongs
-    # 元音联合和三个特殊的情况
     dipthongs = re.compile(r'(eau)|(iou)|(are)|(ai)|(au)|(ea)|(ei)|(eu)|(ie)|(io)|(oa)|(oe)|(oi)|(ou)|(ue)|(ui)')
     s, syllables = dipthongs.subn('', s)
-    # print str(s) + "  " + str(syllables)
     total_syllables += syllables
-
-    # 大于三个的时候e结尾前面加这些东西的时候后缀不发音比如说：love，ve不发音去掉
     if len(s) > 3:
         s = re.sub(r'([bcdfghjklmnpqrstvwxyz])(e$)', r'\g<1>', s)
-
-    # 收尾把前面铺垫的和元音本身都计算
     s, syllables = re.subn(r'[aeiouy]', '', s)
     total_syllables += syllables
-
     return total_syllables
-    # print total_syllables
 
 
 time_align = pd.read_csv('text/dataset_time_align.csv', header=0)
@@ -80,7 +51,8 @@ for i, row in time_align.iterrows():
     def time_to_frame(start, end):
         return [start // 5, end // 5 - 1]
 
-
+    sys.stdout.write('processing feature extraction: %d/%d\r' % (i + 1, len(time_align)))
+    sys.stdout.flush()
     wav_info = fu.read_wav('audio/segment/%s/%s/%s' % (row['Language'], row['Gender'], row['Filename']))
     fa_item = {'Language': row['Language'], 'Gender': row['Gender'], 'Filename': row['Filename']}
     frames = fu.enframe(wav_info['signal'], wav_info['fs'], 10, 5)
@@ -174,5 +146,7 @@ for i, row in time_align.iterrows():
         d.update({'NormZ0 E': normz0_E[i][0], 'NormZ0 F0': normz0_F0[i][0], 'NormZ0 duration': normz0_duration[i][0]})
         d.update({'Diff MFCC': diff_mfcc[i], 'NormZ0 MFCC': normz0_mfcc[i]})
         feature = feature.append(pd.Series(d), ignore_index=True)
+print('\nSaving data to csv files...')
 feature_avg.to_csv('text/dataset_feature_avg.csv', index=False)
 feature.to_csv('text/dataset_feature.csv', index=False)
+print('Done')

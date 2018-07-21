@@ -2,6 +2,7 @@ from pydub import AudioSegment
 import pandas as pd
 import os
 
+
 def apply_segment(audioname):
     try:
         os.mkdir('audio/segment')

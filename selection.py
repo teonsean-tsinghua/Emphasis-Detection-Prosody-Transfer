@@ -8,6 +8,7 @@ ef = pd.read_csv('text/recognized_en_female.csv', header=0)
 
 f = pd.DataFrame(columns=['Gender', 'CnText', 'EnText', 'CnFile', 'EnFile'])
 
+
 def add(gender, cnidx, enidx):
     global f
     if gender == 'male':
@@ -16,15 +17,14 @@ def add(gender, cnidx, enidx):
         enfile = '%d.wav'%enidx
         entext = em[em['Filename'].isin([enfile])].iloc[0]['Text']
         f = f.append({'Gender': 'male', 'CnText': cntext, 'EnText': entext,
-                  'CnFile': cnfile, 'EnFile': enfile}, ignore_index=True)
+                      'CnFile': cnfile, 'EnFile': enfile}, ignore_index=True)
     else:
         cnfile = '%d.wav'%cnidx
         cntext = cf[cf['Filename'].isin([cnfile])].iloc[0]['Text']
         enfile = '%d.wav'%enidx
         entext = ef[ef['Filename'].isin([enfile])].iloc[0]['Text']
         f = f.append({'Gender': 'female', 'CnText': cntext, 'EnText': entext,
-                  'CnFile': cnfile, 'EnFile': enfile}, ignore_index=True)
-
+                      'CnFile': cnfile, 'EnFile': enfile}, ignore_index=True)
 
 
 add('male', 49, 70)
