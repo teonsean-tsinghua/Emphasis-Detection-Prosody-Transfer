@@ -19,4 +19,4 @@
 ### Data Processing
 1. 运行parallelization.py，将dataset_meta.csv中描述的所有语音与文字进行时域上的对齐，生成text/dataset_time_align.csv。
 **该步骤中会通过python的os模块执行shell命令调用SPPAS的python脚本，SPPAS的运行环境为python2.7+。
-在os的函数调用中，默认使用`python`命令来执行python2.7。在不同的运行环境下，可能需要修改此处命令来完成python2的调用**
+在os的函数调用中，默认使用`python`命令来执行python2.7。在不同的运行环境下，可能需要修改此处命令来完成python2的调用。**
