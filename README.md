@@ -9,6 +9,8 @@
 * inaSpeechSegmenter
 * pydub
 * pandas
+* sklearn
+* numpy
 ## Steps
 除特殊说明外，建议用python3运行脚本。
 ### Data Retrieval
