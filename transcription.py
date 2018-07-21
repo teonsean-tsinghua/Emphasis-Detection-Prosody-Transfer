@@ -28,7 +28,8 @@ def speech2text(language, gender):
                                 'Filename': filename, 'Text': re['result']}, ignore_index=True)
         else:
             print(re)
-    text.to_csv('text/recognized_%s_%s.csv' % (language, gender), index=False)
+    text.to_csv('text/transcription_%s_%s.csv' % (language, gender), index=False)
+
 
 
 speech2text('cn', 'male')
