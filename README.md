@@ -1,5 +1,5 @@
 # Emphasis-Detection-Prosody-Transfer
-首先需要下载 https://cloud.tsinghua.edu.cn/d/7947958556a0417cbdc6/ 中的两个wav文件，放在目录audio/original下，作为数据集。  
+(*optional*)首先需要下载 https://cloud.tsinghua.edu.cn/d/7947958556a0417cbdc6/ 中的两个wav文件，放在目录audio/original下，作为数据集。  
 同时，需要到 http://www.sppas.org 下载SPPAS，并安装sppas的依赖，将文件夹SPPAS放在项目根目录下。
 ## Dependencies
 * python3
@@ -15,9 +15,11 @@
 除特殊说明外，建议用python3运行脚本。
 ### Data Retrieval
 1. （*optional*）运行presegmentation.py，在csv/目录下生成两个csv文件描述分段信息。该步骤耗时较长，因此csv文件将上传至repo中。
-2. 运行segmentation.py，将cn.wav和en.wav两个原始音轨中的男声片段与女声片段切分出来，分别存储在audio/segment/cn(en)/male(female)目录下。
+2. （*optional*）运行segmentation.py，将cn.wav和en.wav两个原始音轨中的男声片段与女声片段切分出来，分别存储在audio/segment/cn(en)/male(female)目录下。
+或直接到 https://cloud.tsinghua.edu.cn/d/df52a7aab68c433894f5/ 下载切分好的音频压缩包，目录格式应如前所述。
 3. （*optional*）运行transcription.py，调用百度的语音识别api，将切分后的语音转录为文字，以csv格式存放在csv文件夹下。四个csv文件同样上传至repo中。
-4. 挑选可用数据，校正识别文本，编辑并运行selection.py脚本生成描述可用数据集的csv文件csv/dataset_meta.csv。
+4. 挑选可用数据，校正识别文本，在pair.csv中添加相配的句子对，在第三步的transcription文件中修改文本，
+运行selection.py脚本生成描述可用数据集的csv文件csv/dataset_meta.csv。
 ### Data Processing
 1. 运行parallelization.py，将dataset_meta.csv中描述的所有语音与文字进行时域上的对齐，生成csv/dataset_time_align.csv。
 **注意：该步骤中会通过python的os模块执行shell命令调用SPPAS的python脚本，SPPAS的运行环境为python2.7+。
