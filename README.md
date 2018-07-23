@@ -1,6 +1,6 @@
 # Emphasis-Detection-Prosody-Transfer
-(*optional*)首先需要下载 https://cloud.tsinghua.edu.cn/d/7947958556a0417cbdc6/ 中的两个wav文件，放在目录audio/original下，作为数据集。  
-同时，需要到 http://www.sppas.org 下载SPPAS，并安装sppas的依赖，将文件夹SPPAS放在项目根目录下。
+(*optional*) 下载 https://cloud.tsinghua.edu.cn/d/7947958556a0417cbdc6/ 中的两个wav文件，
+放在目录audio/original下，作为初始数据。或可直接下载 Data Retrieval 步骤中已切分好的音频文件。  
 ## Dependencies
 * python3
 * python2.7+
@@ -11,6 +11,7 @@
 * pandas
 * sklearn
 * numpy
+* SPPAS (*在 http://www.sppas.org 下载，并安装其依赖，将文件夹SPPAS放在项目根目录下。*)
 ## Steps
 除特殊说明外，建议用python3运行脚本。
 ### Data Retrieval
