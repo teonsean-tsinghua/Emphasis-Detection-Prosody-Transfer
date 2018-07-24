@@ -11,7 +11,7 @@ except FileExistsError:
 
 path = os.popen('pwd').readlines()[0].strip()
 meta = pd.read_csv('csv/dataset_meta.csv', header=0)
-align = pd.DataFrame(columns=('Language', 'Gender', 'Filename', 'Active time', 'Alignment'))
+align = pd.DataFrame(columns=('Language', 'Gender', 'Filename', 'Active time', 'Alignment', 'Tokens'))
 
 
 def translate(lang, gend, name):
@@ -20,6 +20,7 @@ def translate(lang, gend, name):
     doc = tree.getroot()
     active_time = []
     alignment = []
+    tokens = []
     for child in doc:
         if child.tag != 'Tier':
             continue
@@ -39,8 +40,9 @@ def translate(lang, gend, name):
                 begin = int(float(interval.find('Begin').get('midpoint')) * 1000)
                 end = int(float(interval.find('End').get('midpoint')) * 1000)
                 alignment.append((tag, begin, end))
+                tokens.append(tag)
     align = align.append({'Language': lang, 'Gender': gend, 'Filename': name,
-                  'Active time': active_time, 'Alignment': alignment}, ignore_index=True)
+                  'Active time': active_time, 'Alignment': alignment, 'Tokens': ' '.join(tokens)}, ignore_index=True)
 
 
 for i, row in meta.iterrows():

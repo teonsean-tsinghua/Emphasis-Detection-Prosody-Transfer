@@ -37,6 +37,8 @@ def count(s):
         s = re.sub(r'([bcdfghjklmnpqrstvwxyz])(e$)', r'\g<1>', s)
     s, syllables = re.subn(r'[aeiouy]', '', s)
     total_syllables += syllables
+    if total_syllables == 0:
+        total_syllables = 1
     return total_syllables
 
 
@@ -68,7 +70,10 @@ for i, row in time_align.iterrows():
     E_scaler = preprocessing.MinMaxScaler()
     norm_E = E_scaler.fit_transform(raw_E)
     norm_avg_E = E_scaler.transform(fa_item['Avg E'])
-    diff_E = (norm_E - norm_avg_E) / norm_avg_E
+    if len(units) == 1:
+        diff_E = [[0]]
+    else:
+        diff_E = (norm_E - norm_avg_E) / norm_avg_E
     z0_E = preprocessing.StandardScaler().fit_transform(raw_E)
     normz0_E = preprocessing.StandardScaler().fit_transform(norm_E)
     '''F0'''
@@ -85,7 +90,10 @@ for i, row in time_align.iterrows():
     F0_scaler = preprocessing.MinMaxScaler()
     norm_F0 = F0_scaler.fit_transform(raw_F0)
     norm_avg_F0 = F0_scaler.transform(fa_item['Avg F0'])
-    diff_F0 = (norm_F0 - norm_avg_F0) / norm_avg_F0
+    if len(units) == 1:
+        diff_F0 = [[0]]
+    else:
+        diff_F0 = (norm_F0 - norm_avg_F0) / norm_avg_F0
     z0_F0 = preprocessing.StandardScaler().fit_transform(raw_F0)
     normz0_F0 = preprocessing.StandardScaler().fit_transform(norm_F0)
 
@@ -105,7 +113,10 @@ for i, row in time_align.iterrows():
     Duration_scaler = preprocessing.MinMaxScaler()
     norm_duration = Duration_scaler.fit_transform(raw_duration)
     norm_avg_duration = Duration_scaler.transform(fa_item['Avg duration'])
-    diff_duration = (norm_duration - norm_avg_duration) / norm_avg_duration
+    if len(units) == 1:
+        diff_E = [[0]]
+    else:
+        diff_duration = (norm_duration - norm_avg_duration) / norm_avg_duration
     z0_duration = preprocessing.StandardScaler().fit_transform(raw_duration)
     normz0_duration = preprocessing.StandardScaler().fit_transform(norm_duration)
 
