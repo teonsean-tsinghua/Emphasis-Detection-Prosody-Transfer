@@ -34,29 +34,26 @@ for _, row in meta.iterrows():
     else:
         cntokens = cn_female[cn_female['Filename'].isin([row['CnFile']])].iloc[0]['Tokens']
         entokens = en_female[en_female['Filename'].isin([row['EnFile']])].iloc[0]['Tokens']
-    pairs.append((cntokens, entokens))
+    pairs.append(cntokens + ' ||| ' + entokens + '\n')
     pair_info.append({'Gender': row['Gender'], 'CnFile': row['CnFile'], 'EnFile': row['EnFile']})
 corpus = pd.read_csv('csv/bilingual.csv', header=0)
 for _, row in corpus.iterrows():
-    pairs.append((row['cn'], row['en']))
+    pairs.append(row['cn'] + ' ||| ' + row['en'] + '\n')
 try:
     os.mkdir('tmp')
 except FileExistsError:
     pass
 try:
-    with open('tmp/corpus_cn.txt', 'w') as fcn:
-        with open('tmp/corpus_en.txt', 'w') as fen:
-            for pair in pairs:
-                fcn.write(pair[0] + '\n')
-                fen.write(pair[1] + '\n')
+    with open('tmp/corpus.txt', 'w') as fout:
+        fout.writelines(pairs)
 except BaseException:
     pass
-# os.system('./fast_align -i tmp/corpus.txt -d -o -v >  tmp/aligned.txt')
-# word_align = pd.DataFrame(columns=('Gender', 'CnFile', 'EnFile', 'Alignment'))
-# with open('tmp/aligned.txt', 'r') as f:
-#     lines = f.readlines()
-#     for info, aligned in zip(pair_info, lines[:len(pair_info)]):
-#         info['Alignment'] = aligned.strip()
-#         word_align = word_align.append(info, ignore_index=True)
-# word_align.to_csv('csv/dataset_word_align.csv', index=False)
-# print_alignment(word_align)
+os.system('./fast_align -i tmp/corpus.txt -d -o -v >  tmp/aligned.txt')
+word_align = pd.DataFrame(columns=('Gender', 'CnFile', 'EnFile', 'Alignment'))
+with open('tmp/aligned.txt', 'r') as f:
+    lines = f.readlines()
+    for info, aligned in zip(pair_info, lines[:len(pair_info)]):
+        info['Alignment'] = aligned.strip()
+        word_align = word_align.append(info, ignore_index=True)
+word_align.to_csv('csv/dataset_word_align.csv', index=False)
+print_alignment(word_align)

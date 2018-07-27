@@ -33,7 +33,7 @@ def extend(text):
     new_text = pat_is.sub(r"\1 is", text)
     new_text = pat_s.sub("", new_text)
     new_text = pat_s2.sub("", new_text)
-    new_text = pat_not.sub(" not", new_text)
+    new_text = pat_not.sub("n not", new_text)
     new_text = pat_would.sub(" would", new_text)
     new_text = pat_will.sub(" will", new_text)
     new_text = pat_am.sub(" am", new_text)
