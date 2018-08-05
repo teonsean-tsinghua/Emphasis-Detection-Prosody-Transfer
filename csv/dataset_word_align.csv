@@ -1,64 +1,62 @@
-Gender,CnFile,EnFile,Alignment
-female,3.wav,3.wav,1-0 2-1 2-2 4-3 3-4
-female,4.wav,4.wav,0-0 1-1 1-2
-female,5.wav,7.wav,0-0 1-1 2-2 3-3 5-4 6-5
-female,8.wav,10.wav,1-0
-female,9.wav,11.wav,0-0 0-1 1-2 2-3 3-4 3-5 5-6 7-7 6-8 12-9 14-10 14-11 10-13 14-14 16-15 16-16 16-17 15-18 18-19 20-20 21-21 22-22 23-23
-female,10.wav,12.wav,0-0 2-1 0-2 3-3 5-4 5-5 6-6 7-7 8-8
-female,19.wav,25.wav,2-0 0-2 3-3 4-4 5-5
-female,20.wav,26.wav,0-0 0-1 1-2 1-3 3-4 3-5
-female,21.wav,27.wav,0-0 1-1 1-2 1-3 2-4 3-5 4-6 6-7 5-8 6-9 7-10
-female,24.wav,29.wav,0-0 0-1 3-2 1-3 2-4 5-6 6-7 4-8 0-9 0-10 11-11 8-12 6-13 11-14 11-15 12-16 12-17
-female,26.wav,33.wav,0-0 1-1 0-2 4-3 6-4 6-5 6-6
-female,27.wav,34.wav,0-0 1-1 0-2 4-3 6-4 6-5 6-6
-female,29.wav,38.wav,0-0 0-1 1-2 1-3 3-4 2-5 5-6 5-7
-female,30.wav,41.wav,0-0 1-1 3-2 3-3 4-4 6-5 5-6 7-7
-female,32.wav,43.wav,3-0 3-1 4-2 8-3 10-4 6-5 7-6 13-7 13-8
-female,36.wav,48.wav,0-0 2-1 2-2 5-3 5-4
-female,37.wav,50.wav,1-0 1-1 2-2 5-3 4-4 5-5
-female,41.wav,55.wav,0-0 1-1 3-2 4-3
-female,43.wav,56.wav,2-0 1-1 4-2 5-3 5-4 0-5 6-6 0-7 9-8 9-9 13-10 7-11
-female,45.wav,58.wav,0-0 1-1 1-2 1-3 6-4 6-5
-female,46.wav,59.wav,0-0 0-1 2-2 4-3
-female,52.wav,73.wav,0-0 0-1 4-2 1-3 3-4 2-5 4-6 4-7 5-8 5-9 5-10
-female,53.wav,74.wav,0-0 1-1 1-2 2-3 2-4 2-5 3-6
-female,54.wav,77.wav,0-0 1-1 4-2 3-3 2-4 0-5 6-6 5-7 8-8
-female,60.wav,85.wav,0-0 0-1 2-2 3-3 3-4 4-5 4-6
-female,61.wav,86.wav,0-0 1-1 1-2 3-3 3-4
-female,63.wav,90.wav,1-0 0-1 1-2 5-3 5-4 6-5 8-6
-female,73.wav,100.wav,0-0 1-1 2-2 5-3 5-4 7-5 9-6 9-7 10-8
-female,76.wav,103.wav,0-0 0-1 2-2 3-3 3-4 5-5
-female,81.wav,109.wav,1-0 2-1 4-2 1-3 5-4 2-5 3-6 3-7 7-8 6-9 7-10 7-11 10-12 9-13 10-14
-female,83.wav,111.wav,0-0 0-1 2-2 1-3 2-4 2-5 3-6 3-7 4-8
-female,88.wav,123.wav,0-0 1-1 2-2 3-3 5-4 6-5
-female,92.wav,126.wav,0-0 1-1 2-2 3-3 4-4
-female,95.wav,129.wav,0-0 1-1 1-2 1-3 2-4 3-5
-female,96.wav,131.wav,0-0 1-1 2-2 2-3 4-4
-female,105.wav,161.wav,0-0 1-1 4-2 4-3 7-4 5-5 7-6 6-7 10-8 11-9 10-10 11-11 10-12 11-13 12-14 13-15 13-16 15-17
-female,107.wav,172.wav,6-0 3-1 3-2 3-3 4-4 7-5 11-6 5-7 10-8
-female,109.wav,175.wav,0-0 0-1 0-2 4-3 3-4 3-5 1-6
-male,11.wav,15.wav,0-0 0-1 1-2 1-3 1-4 2-5
-male,30.wav,38.wav,0-0 4-1 1-2 4-3 4-4 7-5 7-6
-male,32.wav,41.wav,0-0 2-1 1-2 3-3 4-4 3-5
-male,36.wav,46.wav,0-0 0-1 0-2 0-3 0-4 0-5 0-6 0-7 0-8 0-9 0-10
-male,40.wav,49.wav,0-0 1-1 2-2 0-3 3-4 0-5 7-6 4-7 7-8 9-9 9-10 10-11 11-12
-male,46.wav,58.wav,0-0 0-1 0-2 1-3 1-4
-male,49.wav,70.wav,0-0 3-1 2-2 3-3 4-4 4-5 6-6 7-7 7-8 9-9 9-10 10-11
-male,50.wav,72.wav,0-0 0-1 0-2 1-3 4-4 1-5 6-6 4-7 7-8 6-9 6-10
-male,59.wav,83.wav,1-0 1-1 1-2 4-3 3-4 4-5 6-6 6-7 7-8 8-9 8-10
-male,64.wav,87.wav,0-0 2-1 3-2 4-3 6-4 5-5 8-6
-male,66.wav,89.wav,0-0 1-1 4-2 6-4 8-5 7-6 7-7
-male,76.wav,102.wav,0-0 0-1 1-2
-male,79.wav,107.wav,0-0 3-1 3-2 6-3 5-4 6-5
-male,81.wav,109.wav,1-0 1-1 1-2
-male,82.wav,110.wav,1-0 3-1 4-2 3-3 5-4 7-5 8-6 8-7
-male,83.wav,111.wav,1-0 2-1 2-2 3-3 5-4 5-5 7-6
-male,88.wav,115.wav,0-0 1-1 1-2 2-3 2-4
-male,90.wav,119.wav,3-0 2-1 4-2 5-3 5-4 8-5 5-6 7-7
-male,92.wav,122.wav,1-0 1-1 5-2 2-3 3-4 6-5 7-7 9-8 12-9 9-10 6-11 12-12 13-13 15-14
-male,93.wav,123.wav,0-0 3-1 2-2 4-3 6-4 6-5 7-8 8-9
-male,94.wav,124.wav,0-0 3-1 3-2 4-3 5-4 6-5 7-6 8-7
-male,97.wav,126.wav,0-0 0-1 2-2 2-3 3-4 3-5 4-6 5-7 7-9 7-10 9-11 8-12 9-13 12-14 13-15 14-16
-male,115.wav,158.wav,1-0 1-1 0-2 4-3 3-4 1-5 4-6 5-7 4-8
-male,126.wav,175.wav,2-0 0-1 2-2 3-3 3-4 5-5 7-6 8-7 10-8 10-9
-male,138.wav,199.wav,0-0 2-1 2-2 7-4
+,Gender,CnText,EnText,CnFile,EnFile,Word align
+0,female,你具备上沃思学院的潜质吗,Are you Werth Academy material,3.wav,3.wav,null
+1,female,是的我有,yes I am,4.wav,4.wav,"0-0, 1-1, 2-2"
+2,female,看样子他们把终极问题改,Apparently they changed the big question,5.wav,7.wav,"0-0, 1-1, 3-4, 4-5, 5-2"
+3,female,嗯妈妈,em mom,8.wav,10.wav,"0-0, 1-1"
+4,female,你真觉得我具备上沃思的潜质吗过完这个暑假你就具备了因为我给你制定了一个计划,Do you really think I am Werth Academy material You will be by the end of the summer because I have designed a plan,9.wav,11.wav,"0-1, 1-2, 2-3, 3-4, 4-5, 5-6, 6-6, 9-8, 12-14, 13-16, 14-17, 15-9, 16-10, 17-11, 19-18, 20-19, 23-21, 25-22, 27-23"
+5,female,这个计划叫你的人生大计人生大计,I call it your life plan life plan,10.wav,12.wav,"2-1, 0-2, 3-3, 5-4, 6-5, 7-6, 8-7"
+6,female,你哪来的这么多零钱,Where did you get the pennies,19.wav,25.wav,"0-2, 1-0, 2-3, 4-4, 6-5"
+7,female,是隔壁的老爷爷,From the old man next door ,20.wav,26.wav,"1-4, 1-5, 3-2, 3-3"
+8,female,明早给承包商打电话然后把隔壁的那个老头彻底忘掉忘掉了,We will call a contractor in the morning and we will forget the old man even exists Forgotten,24.wav,29.wav,"0-7, 2-4, 3-2, 4-8, 8-12, 11-11, 12-17"
+9,female,请你给我画只绵羊吧,if you please draw me a sheep,26.wav,33.wav,"0-2, 1-1, 3-4, 4-3, 5-5, 6-6"
+10,female,请你给我画只绵羊吧,if you please draw me a sheep,27.wav,34.wav,"0-2, 1-1, 3-4, 4-3, 5-5, 6-6"
+11,female,这跟我想要的一模一样,that is exactly the way I wanted it,29.wav,38.wav,"0-0, 1-1, 2-5, 3-6, 5-2"
+12,female,我只是来把画还给你的,I just want to give your drawing back,30.wav,41.wav,"0-0, 1-1, 4-6, 5-4, 5-7, 6-5"
+13,female,你画的很好你的故事我也读了很入迷,it is nice I read the story too Attentively.,32.wav,43.wav,"3-2, 4-2, 7-6, 8-3, 9-7, 10-4, 13-8"
+14,female,我们还没学过小行星,oh We did not cover asteroids,36.wav,48.wav,"0-1, 2-2, 2-3, 3-4, 4-4, 5-5"
+15,female,小狐狸你叫什么名字,what is your name little fox,37.wav,50.wav,"0-4, 1-5, 2-2, 3-1, 4-0, 5-3"
+16,female,他留下了她一个人,he left her alone,41.wav,55.wav,"0-0, 1-1, 3-2, 4-3"
+17,female,你的桌子上一团乱今天的学习计划完成了吗额,your desk is a mess did you finish your study work for today ah,43.wav,56.wav,"0-0, 1-0, 2-1, 4-3, 6-4, 7-12, 9-9, 10-10, 11-7, 14-13"
+18,female,那你今天一天在干嘛,well what have you been doing,45.wav,58.wav,"0-0, 1-3, 5-2, 5-4, 6-1, 6-5"
+19,female,我读了很多东西,I read a lot,46.wav,59.wav,"0-0, 1-1, 3-2, 3-3, 4-2, 4-3"
+20,female,我觉得我有点不想长大了,I am not so sure I want to grow up anymore,52.wav,73.wav,null
+21,female,我绝对不想忘记这,I definitely do not want to forget,53.wav,74.wav,"0-0, 1-1, 2-2, 2-3, 2-4, 3-6"
+22,female,你连脚都没有你甚至不能去旅行,you haven not any feet you cannot even travel,54.wav,77.wav,"0-0, 2-4, 4-1, 4-2, 5-5, 6-7, 7-6, 9-8"
+23,female,来得正及时是什么意思呀,what do you mean just in time,60.wav,85.wav,"1-4, 2-5, 2-6, 4-1, 5-3"
+24,female,他已经拥有玫瑰了,but he already has his rose,61.wav,86.wav,"0-1, 1-2, 2-3, 3-5"
+25,female,你知不知道今天是我的生日,did you know it is my birthday,63.wav,90.wav,"0-1, 1-0, 1-2, 2-0, 2-2, 3-0, 3-2, 4-3, 5-4, 6-5, 8-6"
+26,female,如果你多点时间陪我你就会明白,if you are ever around you would see that,73.wav,100.wav,"0-0, 1-1, 2-3, 5-4, 6-4, 7-5, 8-6, 9-6, 10-7"
+27,female,离你不见踪影还有多久,how long until you completely disappear,76.wav,103.wav,"0-2, 1-3, 2-4, 2-5, 3-4, 3-5, 4-0, 5-1"
+28,female,没关系这是最后一次什么我们去把飞机发动起来,it is okay this will be the last time what let go get that plane earning,81.wav,109.wav,"0-0, 0-1, 0-2, 1-3, 2-5, 3-7, 4-8, 5-9, 7-11, 9-14, 10-15"
+29,female,我们得先把机翼修好,We are gonna have to fix our wings first,83.wav,111.wav,"0-0, 1-3, 2-8, 4-7, 5-5"
+30,female,你说过他就在天上不是吗,you said he is up there did not you,88.wav,123.wav,"0-0, 1-1, 2-1, 3-2, 5-3, 6-4, 6-5, 7-6, 7-7, 7-8"
+31,female,抬头看天上的星星,just look at the stars,92.wav,126.wav,null
+32,female,我不要他帮忙,I do not want his help,95.wav,129.wav,"0-0, 1-1, 1-2, 1-3, 2-4, 3-5"
+33,female,明天是重要的日子,tomorrow is an important day,96.wav,131.wav,"0-0, 1-1, 2-3, 4-4"
+34,female,所以呢你让我把这本书看一遍一遍又一遍直到我变老,so what I am supposed to read this over and over and over and until I am old,105.wav,161.wav,"0-0, 0-1, 4-2, 3-4, 6-7, 7-7, 8-7, 9-6, 10-8, 10-9, 11-10, 11-11, 11-12, 12-14, 13-15, 14-16, 15-17"
+35,female,还早呢去学校之前我们要去一趟医院,we need to stop at the hospital before school,107.wav,172.wav,null
+36,female,我要给你看个东西,i have got something to show you,109.wav,175.wav,"0-0, 101, 3-6, 4-5, 6-3"
+37,male,警官下午好,very good afternoon to you officer,11.wav,15.wav,"0-5, 1-2, 2-1"
+38,male,那你要的羊就在这里,the sheep you ask for is inside,30.wav,38.wav,"0-0, 1-2, 2-3, 2-4, 4-1, 6-5, 7-6"
+39,male,哦哦你不喜欢,oh you did not like it,32.wav,41.wav,"0-0, 1-0, 2-1, 3-2, 3-3, 4-4"
+40,male,哦他没法回答你我一直想给他缝一张嘴,hello he can not answer you keep Managing to saw him a mouth,40.wav,49.wav,"1-1, 2-2, 2-3, 3-4, 4-5, 5-6, 6-7, 8-10, 9-9, 10-11, 11-12"
+41,male,星星出来了,like that stars are out,46.wav,58.wav,null
+42,male,我现在变成大人了但我从来没有忘记小王子,I managed to grow up and I never forgot the little prince,49.wav,70.wav,"0-0, 2-1, 3-3, 3-4, 5-5, 6-6, 7-7, 8-8, 9-10, 10-11"
+43,male,我比国王的手指头还要强大,but I am more powerful than the finger of the king,50.wav,72.wav,null
+44,male,等你学会了你就永远不会寂寞了,if you can do that you will never be lonely again,59.wav,83.wav,"0-0, 1-1, 2-2, 2-3, 4-5, 5-6, 6-7, 7-8, 8-9"
+45,male,如果如果我能让飞机飞起来的话,If I get that old plane running,64.wav,87.wav,"0-0, 1-0, 2-1, 3-2, 4-2, 5-5, 6-6"
+46,male,你知道我该去找小王子了的话,you know go be with the little prince,66.wav,89.wav,null
+47,male,狐狸先生,ah Mr fox,76.wav,102.wav,"0-2, 1-1"
+48,male,天亮时我们找到了一口井,we found a well at daybreak,79.wav,107.wav,"0-4, 0-5, 2-0, 3-1, 5-2, 6-3"
+49,male,孩子听我说,now now listen,81.wav,109.wav,null
+50,male,那天我干了一件不好的事情,I made a big mistake the other day,82.wav,110.wav,"0-5, 0-6, 0-7, 1-0, 2-1, 4-2, 5-2, 6-4, 7-4, 8-4"
+51,male,以后你不能再到这儿来了,you can not come over here anymore,83.wav,111.wav,"0-6, 1-0, 2-1, 2-2, 3-6, 4-3, 5-5, 6-4"
+52,male,我只能一个人走,I have to go alone,88.wav,115.wav,"0-0, 1-1, 1-2, 2-4, 3-3"
+53,male,不知道怎么回事他知道我的飞机修好了,he knew that I had fixed my plane,90.wav,119.wav,null
+54,male,的确像他说的那样我仰望星空的时候能听见他在欢笑,it is as he said I look at the stars and I hear him laughing,92.wav,122.wav,"0-1, 1-2, 2-3, 3-4, 6-5, 7-6, 8-9, 12-12, 13-13, 15-14"
+55,male,如果能确定的话我自然十分欣慰但是,it would comfort me very much now for sure but,93.wav,123.wav,null
+56,male,我还是宁愿选择相信他就在那,I choose to believe he is up there,94.wav,124.wav,"0-0, 2-1, 3-1, 4-3, 5-4, 7-5, 8-6, 8-7"
+57,male,就像就像我知道小王子永远会和他的玫瑰在一起,it is it is just like I know the little prince will always be with his rose,97.wav,126.wav,"1-5, 4-6, 5-7, 6-9, 7-10, 8-12, 9-11, 11-15, 13-16, 14-14"
+58,male,你为什么要这么做为什么要,why did you do that why did you do,115.wav,158.wav,"0-2, 1-0, 2-1, 3-4, 4-3, 4-5, 5-5, 6-6"
+59,male,我们采用一套更为快速有效的方法让你长大,here we take a more accelerated approach to growing up,126.wav,175.wav,"0-1, 1-2, 2-3, 3-4, 4-5, 5-5, 7-6, 10-8, 10-9"
+60,male,我想不起你说过什么,I do not even remember,138.wav,199.wav,null

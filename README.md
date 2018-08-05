@@ -12,6 +12,7 @@
 * sklearn
 * numpy
 * SPPAS (*在 http://www.sppas.org 下载，并安装其依赖，将文件夹SPPAS放在项目根目录下。*)
+* fast_align (*在 https://github.com/clab/fast_align 获取，编译后将可执行文件fast_align放在项目根目录下。*)
 ## Steps
 除特殊说明外，建议用python3运行脚本。
 ### Data Retrieval
